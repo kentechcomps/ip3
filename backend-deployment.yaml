@@ -15,8 +15,8 @@ spec:
         app: backend
     spec:
       containers:
-        - name: backend
-          image: brianbwire/brian-yolo-backend:v1.0.0
+        - name: yolobackendcontainer
+          image: kencehz/yolobackend:v1.0.0
           command: ["npm", "start"] 
           ports:
             - containerPort: 5000
@@ -31,11 +31,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: yolobackendservice
 spec:
   type: LoadBalancer
   selector:
-    app: backend
+    app: yolobackend
   ports:
     - protocol: TCP
       port: 5000

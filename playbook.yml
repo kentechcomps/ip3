@@ -3,7 +3,11 @@
   hosts: all
   become: true
   roles: 
-    - frontend-deployment
-    - setup-mongodb   
+    - docker-installation
+    - docker-compose-installation
+    - setup-nodejs
+    - setup-npm 
+    - setup-mongodb 
     - backend-deployment
+    - frontend-deployment
     

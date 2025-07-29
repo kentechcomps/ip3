@@ -48,10 +48,9 @@ services:
       - "27017:27017"
     networks:
       - app-net
+
     volumes:
-      - type: volume
-        source: app-mongo-data
-        target: /data/db
+      - ./app-mongo-data:/data/db
 
 #Creates the network infrastructure necessary for the containers to communicate with each other
 networks:
